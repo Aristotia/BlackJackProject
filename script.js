@@ -1,4 +1,4 @@
-//  *Le croupier donne deux valeurs au joueur
+/*Le croupier donne deux valeurs au joueur
 
 let playerTotal = 0;
 
@@ -63,7 +63,7 @@ if (dealerTotal < 17){
       console.log(`La carte tirée vaut ${dealerValue3}, le total du dealer est maintenant de ${dealerTotal}`)
   }
 
-//Si personne n'a au dessus de 21, le score le plus haut gagne.
+//Si personne n'a au dessus de 21, le score le plus haut gagne.*/
 
 
 // BONUS: rajouter un scénario et une mise
@@ -71,7 +71,11 @@ if (dealerTotal < 17){
 
 //VERSION 2
 
-//  *Le croupier donne deux valeurs au joueur
+let gameOver=true;
+
+while(gameOver){
+  
+gameOver = confirm("Voulez-vous commencer une nouvelle partie?");
 
 let playerTotal = 0;
 
@@ -99,24 +103,20 @@ if (playerTotal < 21) {
       let playerValue3 = Math.floor(Math.random() * 10) + 1;
   
       playerTotal += playerValue3;
-<<<<<<< HEAD
       console.log(`Ta nouvelle carte est le ${playerValue3}. Ton total est de ${playerTotal}.`)
-=======
-      console.log(`Ta nouvelle carte est le ${playerValue3}.Ton total est de ${playerTotal}.`)
->>>>>>> ff034c3969ad9257eda4a7daeadeb95e16249189
       if (playerTotal >= 21) {
-        break;
+        break ;
       }
     }
   }
   
   if (playerTotal === 21) {
     console.log("Blackjack!!! Bravo tu a gagné!")
-    return
+    continue
   }
   if (playerTotal > 21) {
-    console.log("Tu a perdu =(")
-    return
+    console.log("Tu as perdu =(")
+    continue
   }
 
 //Tour du dealer
@@ -131,12 +131,12 @@ if (playerTotal < 21) {
 
 if (dealerTotal===21){
     console.log("Blackjack!!! Tu as perdu =(")
-  return
+  continue
 }
 
 if (dealerTotal>21){
     console.log("Tu as gagné =)")
-  return
+  continue
   };
 
 //Comparatif des totaux et déclaration du vainqueur
@@ -147,4 +147,4 @@ if (dealerTotal > playerTotal){
   else if (dealerTotal < playerTotal){
       console.log("Vous avez gagné =)");
     }
-  else console.log("Egalité =|");
+  else console.log("Egalité =|");}
