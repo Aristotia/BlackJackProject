@@ -32,6 +32,7 @@ if (playerTotal===21){
     console.log("Blackjack!!! Bravo tu a gagné!")
 }
 
+//Si le score dépasse 21, le croupier gagne et le jeu s'arrête
 if (playerTotal>21){
     console.log("Tu a perdu =(")
   }
@@ -44,7 +45,7 @@ else if (dealerTotal<=17){
 //Si le score du joueur est en-dessous de 21, il  peut demander une nouvelle carte
 
 
-//Si le score dépasse 21, le croupier gagne et le jeu s'arrête
+
 
 //Si le total des deux valeurs du croupier est égale à 17 ou la dépasse, le jeu s'arrête
 if (dealerTotal >= 17){
@@ -93,20 +94,25 @@ console.log (`La carte du dealer vaut ${dealerValue1}.`)
 
 //Tour du joueur
 
-if (confirm("Veux tu tirer une nouvelle carte?")){
-  let playerValue3 = Math.floor(Math.random() * 10) + 1;
-    playerTotal += playerValue3;
-    console.log(`La carte tirée vaut ${playerValue3}, ton total est maintenant de ${playerTotal}.`)
-}
-
-if (playerTotal===21){
-    console.log("Blackjack!!! Bravo tu a gagné!");
-  return
-}
-
-if (playerTotal>21){
-    console.log("Tu a perdu =(");
-  return
+if (playerTotal < 21) {
+    while (confirm("Veux tu tirer une nouvelle carte?")) {
+      let playerValue3 = Math.floor(Math.random() * 10) + 1;
+  
+      playerTotal += playerValue3;
+      console.log(`Ta nouvelle carte est le ${playerValue3}. Ton total est de ${playerTotal}.`)
+      if (playerTotal >= 21) {
+        break;
+      }
+    }
+  }
+  
+  if (playerTotal === 21) {
+    console.log("Blackjack!!! Bravo tu a gagné!")
+    return
+  }
+  if (playerTotal > 21) {
+    console.log("Tu a perdu =(")
+    return
   }
 
 //Tour du dealer
