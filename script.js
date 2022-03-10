@@ -99,7 +99,11 @@ if (playerTotal < 21) {
       let playerValue3 = Math.floor(Math.random() * 10) + 1;
   
       playerTotal += playerValue3;
+<<<<<<< HEAD
       console.log(`Ta nouvelle carte est le ${playerValue3}. Ton total est de ${playerTotal}.`)
+=======
+      console.log(`Ta nouvelle carte est le ${playerValue3}.Ton total est de ${playerTotal}.`)
+>>>>>>> ff034c3969ad9257eda4a7daeadeb95e16249189
       if (playerTotal >= 21) {
         break;
       }
