@@ -100,7 +100,7 @@ while (gameOver) {
   dealerTotal = dealerValue1 + hiddenDealerValue;
 
   console.log(
-    `Le croupier a tiré le.....${dealerValue1} et une carte secrete.`
+    `Le croupier a tiré le.....${dealerValue1} et une carte face cachée.`
   );
 
   //Tour du joueur
@@ -131,7 +131,7 @@ while (gameOver) {
   //Tour du dealer
 
   console.log("C'est le tour du croupier.");
-
+  console.log(`La carte face cachée vaut ${hiddenDealerValue}`)
   if (dealerTotal < 17) {
     let dealerValue3 = Math.floor(Math.random() * 10) + 1;
     dealerTotal += dealerValue3;
